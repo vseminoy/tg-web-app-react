@@ -21,11 +21,11 @@ const ProductList = () => {
     const {tg} = useTelegram();
 
     const onAdd = (product) => {
-        const alreadyAdded = addedItems.find(item => item.id==product.id);
+        const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
         if(alreadyAdded) {
-            newItems = addedItems.filter(item => item.id!==product.id);
+            newItems = addedItems.filter(item => item.id !== product.id);
         }else {
             newItems = [...newItems,product];
         }
@@ -45,7 +45,7 @@ const ProductList = () => {
     return (
         <div className={'list'}>
             {products.map( item => (
-                <ProductItem product={product} onAdd={onAdd} className={'item'}/>
+                <ProductItem product={item} onAdd={onAdd} className={'item'}/>
             ))}
         </div>
     );
