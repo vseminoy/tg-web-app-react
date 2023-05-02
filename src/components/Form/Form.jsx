@@ -32,7 +32,7 @@ const Form = () => {
             street,
             subject
         };
-        tg.sentData(JSON.stringlify(data));
+        tg.sendData(JSON.stringify(data));
     },[country, street, subject]);
 
     useEffect( () => {
