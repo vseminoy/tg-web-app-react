@@ -9,15 +9,15 @@ const Form = () => {
     const {tg} = useTelegram();
 
     const onChangeCountry = (e) => {
-        setCountry(e.targer.value);
+        setCountry(e.target.value);
     }
 
     const onChangeStreet = (e) => {
-        setStreet(e.targer.value);
+        setStreet(e.target.value);
     }
 
     const onChangeSubject = (e) => {
-        setSubject(e.targer.value);
+        setSubject(e.target.value);
     }
 
     useEffect( () => {
