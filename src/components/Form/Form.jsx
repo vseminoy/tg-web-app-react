@@ -33,14 +33,14 @@ const Form = () => {
             subject
         };
         tg.sentData(JSON.stringlify(data));
-    },[]);
+    },[country, street, subject]);
 
     useEffect( () => {
         tg.onEvent('mainButtonClicked', onSendData);
         return () => {
             tg.offEvent('mainButtonClicked', onSendData);
         }
-    },[country,street])
+    },[onSendData])
 
     useEffect( () => {
         if(!country || !street)
