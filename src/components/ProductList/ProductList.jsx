@@ -41,7 +41,7 @@ const ProductList = () => {
     },[onSendData])
 
     const onAdd = (product) => {
-        let test = newItems.length + ' ' + product.id + ' ';
+        let test = addedItems.length + ' ' + product.id + ' ';
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
