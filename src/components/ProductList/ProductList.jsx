@@ -41,23 +41,30 @@ const ProductList = () => {
     },[onSendData])
 
     const onAdd = (product) => {
+        let test = newItems.length + ' ' + product.id + ' ';
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
+        test += `  (${alreadyAdded})`;
+
         if(alreadyAdded) {
+            test += `  0`;
             newItems = addedItems.filter(item => item.id !== product.id);
         }else {
+            test += `  1`;
             newItems.push(product);
         }
 
         setAddedItems(newItems);
+
+        test += `  `+newItems.length;
 
         if(newItems.length === 0){
             tg.MainButton.hide();
         }else{
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${getTotalPrice(newItems)}`
+                text: `Купить ${test/*getTotalPrice(newItems)*/}`
             });
         }
     }
