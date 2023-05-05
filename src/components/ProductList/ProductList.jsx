@@ -11,9 +11,9 @@ const products = [
 ]
 
 const getTotalPrice = (items=[]) => {
-    return items.length;/*items.reduce((acc,item) => {
+    return items.reduce((acc,item) => {
         return acc += item.price
-    },0);*/
+    },0);
 }
 
 const ProductList = () => {
@@ -47,7 +47,7 @@ const ProductList = () => {
         if(alreadyAdded) {
             newItems = addedItems.filter(item => item.id !== product.id);
         }else {
-            newItems = [...newItems,product];
+            newItems.push(product);
         }
 
         setAddedItems(newItems);
@@ -57,7 +57,7 @@ const ProductList = () => {
         }else{
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${/*getTotalPrice(newItems)*/newItems.length}`
+                text: `Купить ${getTotalPrice(newItems)}`
             });
         }
     }
