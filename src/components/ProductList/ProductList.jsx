@@ -18,15 +18,16 @@ const getTotalPrice = (items=[]) => {
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg} = useTelegram();
+    const {tg, queryId} = useTelegram();
 
 
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
-            totalPrice: getTotalPrice(addedItems)
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
         };
-        fetch('http://localhost:8080',{
+        fetch('http://45.131.96.44:8080/web-data',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(data)
