@@ -52,7 +52,7 @@ const ProductList = () => {
             newItems = addedItems.filter(item => item.id !== product.id);
         }else {
             test += `  1`;
-            newItems.push(product);
+            newItems = [...alreadyAdded, product];
         }
 
         setAddedItems(newItems);
