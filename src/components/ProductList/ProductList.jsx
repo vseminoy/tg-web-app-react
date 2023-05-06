@@ -27,12 +27,12 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         };
-        fetch('http://192.168.0.2:8080/web-data',{
+        fetch('http://45.131.96.44:8080/web-data',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(data)
         })
-    },[addedItems,queryId]);
+    },[addedItems]);
 
     useEffect( () => {
         tg.onEvent('mainButtonClicked', onSendData);
