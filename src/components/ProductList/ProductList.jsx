@@ -22,7 +22,7 @@ const ProductList = () => {
 
 
     const onSendData = useCallback(() => {
-        const data = {
+        /*const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
@@ -31,7 +31,7 @@ const ProductList = () => {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(data)
-        })
+        })*/
     },[addedItems]);
 
     useEffect( () => {
